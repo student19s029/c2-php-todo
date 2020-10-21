@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Todo;
 use Illuminate\Http\Request;
 
 class TodoController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
+     * Todo一覧を取得
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
+        $todo_list = Todo::paginate(5);
+        return view('todo/index', compact('todo_list'));
     }
 
     /**
@@ -39,13 +41,13 @@ class TodoController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     * Todo単体を取得
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(int $id)
     {
-        //
+        return view('todo/show', ['todo' => Todo::findOrFail($id)]);
     }
 
     /**
