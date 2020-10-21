@@ -13,12 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::group(['middleware' => ['web', 'auth']], function () {
-    Route::resource('todo', 'TodoController', ['only' => [
-        'index', 'show'
-    ]]);
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Route::resource('todo', 'TodoController', ['only' => [
+    'index', 'show'
+]]);
