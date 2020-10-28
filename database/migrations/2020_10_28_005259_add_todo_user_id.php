@@ -13,7 +13,9 @@ class AddTodoUserId extends Migration
      */
     public function up()
     {
-        //
+        Schema::table('todos', function (Blueprint $table) {
+            $table->foreignId('user_id')->after('id')->constrained();
+        });
     }
 
     /**
@@ -23,6 +25,9 @@ class AddTodoUserId extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('todos', function (Blueprint $table) {
+            $table->dropForeign('todos_user_id_foreign');
+            $table->dropColumn('user_id');
+        });
     }
 }
