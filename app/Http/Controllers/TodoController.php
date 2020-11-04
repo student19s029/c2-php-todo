@@ -52,8 +52,10 @@ class TodoController extends Controller
     {   
         ////すべてのタスクを表示する
         //return view('todo/show', ['todo' => Todo::findOrFail($id)]);
+
+
         //指定されたタスクを表示する
-        $todo = Auth::user()->todos()->findOrFail($id);
+        $todo = Auth::user()->todos()->findOrFail($id);//タスクを指定
         return view('todo/show', compact('todo'));
     }
 
