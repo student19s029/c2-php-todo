@@ -13,8 +13,8 @@
 <div class="container">
     <div class="col-md-12">
         <h1 class="text-center text-primary py-3">TODO App</h1>
-
         <h2 class="text-muted py-3">やること一覧</h2>
+        <a href="/todo/create" class="btn btn-primary">新規作成</a>
         <table class="table">
             <thead>
             <tr>

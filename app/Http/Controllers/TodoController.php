@@ -29,6 +29,7 @@ class TodoController extends Controller
     public function create()
     {
         //
+        return view('todo/create');
     }
 
     /**
@@ -40,6 +41,7 @@ class TodoController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -68,6 +70,7 @@ class TodoController extends Controller
     public function edit($id)
     {
         //
+
     }
 
     /**
@@ -80,6 +83,7 @@ class TodoController extends Controller
     public function update(Request $request, $id)
     {
         //
+
     }
 
     /**
@@ -91,5 +95,6 @@ class TodoController extends Controller
     public function destroy($id)
     {
         //
+
     }
 }
