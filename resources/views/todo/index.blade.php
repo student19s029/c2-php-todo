@@ -12,6 +12,7 @@
                 <tr>
                     <th>タイトル</th>
                     <th>期限</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -23,6 +24,9 @@
                             </a>
                         </td>
                         <td>{{ $todo->due_date }}</td>
+                        <th>
+                            <a href="/todo/{{ $todo->id }}/edit" class="btn btn-success"><i class="fas fa-edit mr-2"></i>編集</a>
+                        </th>
                     </tr>
                 @endforeach
                 </tbody>
