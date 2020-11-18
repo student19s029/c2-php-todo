@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['web', 'auth']], function () {
     Route::resource('todo', 'TodoController', ['only' => [
-        'index', 'create', 'show'
+        'index', 'create', 'store', 'show'
     ]]);
 });
 
