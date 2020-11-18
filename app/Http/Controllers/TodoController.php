@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateTodoRequest;
@@ -58,10 +57,6 @@ class TodoController extends Controller
      */
     public function show(int $id)
     {   
-        ////すべてのタスクを表示する
-        //return view('todo/show', ['todo' => Todo::findOrFail($id)]);
-
-
         //指定されたタスクを表示する
         $todo = Auth::user()->todos()->findOrFail($id);//タスクを指定
         return view('todo/show', compact('todo'));
@@ -75,7 +70,8 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Auth::user()->todos()->findOrFail($id);
+        return view('todo/edit', compact('todo'));
 
     }
 
