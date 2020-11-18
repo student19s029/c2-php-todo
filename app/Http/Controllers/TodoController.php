@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
+    // ページネーションの件数
     private const PAGE_SIZE = 5;
+
     /**
      * Display a listing of the resource.
      * Todo一覧を取得
@@ -16,7 +18,6 @@ class TodoController extends Controller
      */
     public function index()
     {
-        //$todo_list = Todo::paginate(5);
         $todo_list = Auth::user()->todos()->paginate(self::PAGE_SIZE);
         return view('todo/index', compact('todo_list'));
     }
@@ -28,7 +29,6 @@ class TodoController extends Controller
      */
     public function create()
     {
-        //
         return view('todo/create');
     }
 
