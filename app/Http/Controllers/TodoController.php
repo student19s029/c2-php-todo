@@ -46,7 +46,7 @@ class TodoController extends Controller
         $todo->status = Todo::STATUS_NOT_YET;
 
         Auth::user()->todos()->save($todo);
-        return redirect()->to('/todo');
+        return redirect()->to('/todo');    //タスク単体ページにリダイレクト 
     }
 
     /**
@@ -84,7 +84,15 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //フォームから送信されたタスクを書き換える
+        $todo = Auth::user()->todos()->findOrFail($id);//指定されたタスクを指定
+        $todo->title = $request->title;
+        $todo->due_date = $request->due_date;
+        $todos->save($todo);
+
+        //タスク単体ページにリダイレクト
+        
+        return redirect()->to(path:'/todo',$todo->id);
 
     }
 
