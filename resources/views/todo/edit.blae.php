@@ -9,6 +9,7 @@
                 <button class="btn btn-primary my-2" type="submit">更新</button>
             </form>
             <hr>
+            @method('PUT')
             @include('parts.button.back')
         </div>
     </div>

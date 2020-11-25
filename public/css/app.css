@@ -234,6 +234,7 @@ caption {
 th {
   text-align: inherit;
   text-align: -webkit-match-parent;
+  background: red;
 }
 
 label {
@@ -396,6 +397,8 @@ h1,
 h2,
 .h2 {
   font-size: 1.8rem;
+  background: rgb(230, 230, 230);
+  border-radius: 10px;
 }
 
 h3,
