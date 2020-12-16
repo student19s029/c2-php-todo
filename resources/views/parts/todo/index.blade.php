@@ -7,7 +7,7 @@
             <div class="float-right my-3"><!-- 新規作成ボタン -->
                 <a href="/todo/create/" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>新規作成</a>
             </div>
-            <table class="table">
+            <table class="table"><!-- テーブル -->
                 <thead><!-- テーブルヘッダー -->
                 <tr>
                     <th width="50%">タイトル</th>

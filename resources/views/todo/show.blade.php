@@ -4,7 +4,7 @@
     <div class="container">
         <div class="col-md-10">
         <h2 class="text-muted py-3">{{ $todo->title }}</h2>
-        <table class="table">
+        <table class="table"><!-- テーブル -->
             <thead><!-- テーブルヘッダー -->
             <tr>
                 <th>タイトル</th>
