@@ -46,4 +46,9 @@
             {{ $todo_list->links() }}
         </div>
     </div>
+    @include('parts.modal.delete')
+@endsection
+
+@section('script')
+    <script src="{{ asset('/js/todo/app.js') }}"></script>
 @endsection
