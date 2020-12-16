@@ -11,7 +11,16 @@ class Todo extends Model
         '未対応',
         '作業中',
         '完了',
-        '中止',
+    ];
+
+    const WEEK = [
+        '日',
+        '月',
+        '火',
+        '水',
+        '木',
+        '金',
+        '土',
     ];
 
     protected $fillable = ['title', 'due_date', 'status'];
@@ -28,5 +37,15 @@ class Todo extends Model
         }
 
         return self::STATUS[$this->status];
+    }
+    
+    /**
+     * Y年m月d日(w) の文字列を返す
+     * @return string
+     */
+    public function getDisplayDate(): string
+    {
+        $timestamp = strtotime($this->due_date);
+        return Date('Y年m月d日', $timestamp) . '('. self::WEEK[Date('w', $timestamp)] .')';
     }
 }
