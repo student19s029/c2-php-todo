@@ -11,6 +11,7 @@ class Todo extends Model
         '未対応',
         '作業中',
         '完了',
+        '中止',
     ];
 
     protected $fillable = ['title', 'due_date', 'status'];
