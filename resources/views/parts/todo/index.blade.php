@@ -35,9 +35,11 @@
                             <a href="/todo/{{ $todo->id }}/edit" class="btn btn-success"><i class="fas fa-edit mr-2"></i>編集</a>
                         </th>
                         <th><!-- 削除ボタン -->
-                        <button class="btn btn-danger delete-btn" type="button" data-toggle="modal" data-target="#delete-modal" data-todo_title="{{ $todo->title }}" data-todo_id="{{ $todo->id }}">
-                                <i class="fas fa-trash-alt mr-2"></i>削除
-                            </button>
+                            <form action="/todo/{{ $todo->id }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt mr-2"></i>削除</button>
+                            </form>
                         </th>
                     </tr>
                 @endforeach
@@ -46,9 +48,4 @@
             {{ $todo_list->links() }}
         </div>
     </div>
-    @include('parts.modal.delete')
-@endsection
-
-@section('script')
-    <script src="{{ asset('/js/todo/app.js') }}"></script>
 @endsection

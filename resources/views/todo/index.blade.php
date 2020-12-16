@@ -25,21 +25,19 @@
                                 {{ $todo->title }}  
                             </a>
                         </td>
-                        <td><!-- 期限 -->
-                        {{ $todo->due_date }}
-                        </td>
                         <td><!-- 状態 -->
                             {{ $todo->getStatusText() }}
+                        </td>
+                        <td><!-- 期限 -->
+                        {{ $todo->due_date }}
                         </td>
                         <td><!-- 編集ボタン -->
                             <a href="/todo/{{ $todo->id }}/edit" class="btn btn-success"><i class="fas fa-edit mr-2"></i>編集</a>
                         </td>
                         <td><!-- 削除ボタン -->
-                            <form action="/todo/{{ $todo->id }}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <button class="btn btn-danger" type="submit"><i class="fas fa-trash-alt mr-2"></i>削除</button> 
-                            </form>
+                        <button class="btn btn-danger delete-btn" type="button" data-toggle="modal" data-target="#delete-modal" data-todo_title="{{ $todo->title }}" data-todo_id="{{ $todo->id }}">
+                                <i class="fas fa-trash-alt mr-2"></i>削除
+                            </button>
                         </td>
                     </tr>
                 @endforeach
