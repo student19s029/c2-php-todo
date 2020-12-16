@@ -8,15 +8,15 @@
                 <a href="/todo/create/" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>新規作成</a>
             </div>
             <table class="table">
-                <thead>
-                <tr><!-- テーブルヘッダー -->
+                <thead><!-- テーブルヘッダー -->
+                <tr>
                     <th width="50%">タイトル</th>
                     <th width="20%">期限</th>
                     <th width="15%"></th>
                     <th width="15%"></th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody><!-- テーブルボディー -->
                 @foreach($todo_list as $todo)
                     <tr>
                         <td><!-- タイトル -->
